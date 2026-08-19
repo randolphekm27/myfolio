@@ -3,20 +3,6 @@ import { useEffect } from 'react'
 export default function CVPage() {
   useEffect(() => {
     window.scrollTo(0, 0)
-    const revealElements = document.querySelectorAll('.reveal-text')
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target as HTMLElement
-          el.style.transition = 'opacity 1.5s ease, transform 1.5s ease'
-          el.style.opacity = '1'
-          el.style.transform = 'translateY(0)'
-          revealObserver.unobserve(entry.target)
-        }
-      })
-    }, { threshold: 0.1 })
-    revealElements.forEach(el => revealObserver.observe(el))
-    return () => revealObserver.disconnect()
   }, [])
 
   const handlePrint = () => {
@@ -24,129 +10,216 @@ export default function CVPage() {
   }
 
   return (
-    <article className="page-content">
-      <section className="story-block section-observe reveal-text" style={{ paddingTop: '10rem', paddingBottom: '3rem' }}>
-        <h1 className="hero-title text-center" style={{ marginBottom: '1.5rem' }}>Curriculum Vitae</h1>
-        <p className="hero-description text-center" style={{ maxWidth: '800px', margin: '0 auto 2rem auto' }}>
-          Randolphe Kodjo Mahulolo — Pédagogue, Technologue & Créatif Numérique.
+    <article className="page-content" style={{ paddingTop: 'calc(var(--header-height) + 2rem)', paddingBottom: '6rem' }}>
+      
+      {/* DOWNLOAD / PRINT HEADER BAR */}
+      <div className="no-print text-center" style={{ marginBottom: '2.5rem' }}>
+        <h1 className="hero-title" style={{ fontSize: '2.2rem', marginBottom: '0.8rem' }}>Curriculum Vitae</h1>
+        <p className="hero-description" style={{ fontSize: '1.1rem', color: 'var(--color-gray)', marginBottom: '1.5rem' }}>
+          Format officiel de Randolphe Kodjo Mahulolo prê̂t pour impression et téléchargement PDF.
         </p>
+        <button 
+          onClick={handlePrint}
+          className="contact-back"
+          style={{ cursor: 'pointer', background: 'none', border: 'none' }}
+        >
+          <a style={{ display: 'inline-block', fontWeight: '600', padding: '0.8rem 2rem' }}>
+            Télécharger / Imprimer le CV en PDF
+          </a>
+        </button>
+      </div>
 
-        <div className="text-center no-print" style={{ marginBottom: '3rem' }}>
-          <button 
-            className="contact-back" 
-            onClick={handlePrint}
-            style={{ cursor: 'pointer', background: 'none', border: 'none' }}
-          >
-            <a style={{ display: 'inline-block' }}>Imprimer / Télécharger le CV (PDF)</a>
-          </button>
-        </div>
-      </section>
-
-      {/* CV CONTENT */}
-      <div className="narrative-article cv-print-area">
+      {/* STANDARD EXECUTIVE CV CONTAINER */}
+      <div className="cv-document-sheet">
         
-        {/* ENTÊTE & PROFIL */}
-        <section className="story-block section-observe reveal-text" style={{ paddingTop: '1rem', paddingBottom: '3rem' }}>
-          <p className="story-highlight text-center">KODJO Mahulolo Randolphe</p>
-          <p className="text-center" style={{ fontSize: '1.1rem', color: 'var(--color-gray)', marginBottom: '2rem' }}>
-            Pédagogue &middot; Technologue &middot; Électronique, Montage Vidéo & IA<br />
-            Bénin &middot; randolphekm27@gmail.com &middot; +229 0157703972
-          </p>
-          <p style={{ maxWidth: '750px' }}>
-            Pédagogue certifié (BAPET) et technologue diplômé de l'École Normale Supérieure de l'Enseignement Technique (ENSET) de Lokossa, spécialisé en ingénierie électronique et didactique des médias numériques. Auteur d'un mémoire d'ingéniorat pédagogique soutenu avec 18/20 (Mention EXCELLENT). Compétences en maintenance technique (GSM & informatique), montage vidéo, motion design et technologies numériques.
-          </p>
-        </section>
+        {/* CV TOP HEADER BANNER */}
+        <header className="cv-sheet-header">
+          <div className="cv-header-titles">
+            <h1 className="cv-name">KODJO Mahulolo Randolphe</h1>
+            <p className="cv-headline">Pédagogue &bull; Technologue &bull; Électronique & Création Numérique</p>
+          </div>
+          <div className="cv-header-contact">
+            <div><span>Email :</span> randolphekm27@gmail.com</div>
+            <div><span>Téléphone :</span> +229 0157703972</div>
+            <div><span>Adresse :</span> Bénin (Hounviguè / Lokossa / Comé)</div>
+            <div><span>LinkedIn :</span> linkedin.com/in/randolphe-km-841626349</div>
+          </div>
+        </header>
 
-        {/* PARCOURS ACADÉMIQUE */}
-        <section className="story-block section-observe reveal-text" style={{ paddingTop: '2rem', paddingBottom: '3rem' }}>
-          <p className="story-highlight text-center mb-2">Parcours Académique & Diplômes</p>
+        {/* CV TWO-COLUMN BODY */}
+        <div className="cv-sheet-body">
           
-          <div style={{ width: '100%', maxWidth: '750px', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-            <div>
-              <p className="story-highlight" style={{ fontSize: '1.4rem', marginBottom: '0.3rem' }}>
-                BAPET — Brevet d'Aptitude au Professorat de l'Enseignement Technique
+          {/* LEFT SIDEBAR COLUMN */}
+          <aside className="cv-sidebar">
+            
+            {/* PROFIL */}
+            <section className="cv-section">
+              <h2 className="cv-section-title">Profil</h2>
+              <p className="cv-text">
+                Pédagogue certifié (BAPET) et technologue diplômé de l'ENSET Lokossa. Auteur d'un mémoire d'ingéniorat pédagogique soutenu avec <strong>18/20 (Mention EXCELLENT)</strong> sur les capsules vidéo didactiques en électronique. Polyvalent en maintenance technique (GSM & PC), montage vidéo, motion design, prompt engineering et Vibe Coding.
               </p>
-              <p style={{ fontSize: '1rem', color: 'var(--color-gray)' }}>ENSET Lokossa — UNSTIM d'Abomey (2024 - 2025)</p>
-              <p style={{ fontSize: '1.1rem' }}>Spécialité Électronique. Soutenance du mémoire le 14/07/2025 : 18/20 (Mention EXCELLENT).</p>
-            </div>
+            </section>
 
-            <div>
-              <p className="story-highlight" style={{ fontSize: '1.4rem', marginBottom: '0.3rem' }}>
-                Licence en Sciences Techniques & Industrielles (Électronique)
-              </p>
-              <p style={{ fontSize: '1rem', color: 'var(--color-gray)' }}>ENSET Lokossa (2022 - 2025)</p>
-              <p style={{ fontSize: '1.1rem' }}>Génie électronique, automatique, didactique et ingénierie de la capsule vidéo pédagogique (CAPVIDUP).</p>
-            </div>
+            {/* COMPÉTENCES */}
+            <section className="cv-section">
+              <h2 className="cv-section-title">Compétences</h2>
+              
+              <div className="cv-skill-group">
+                <h3>Électronique & Embarqué</h3>
+                <p>Schématique PCB, Langage C, Microcontrôleurs, Maintenance GSM & Informatique, Équipements hospitaliers.</p>
+              </div>
 
-            <div>
-              <p className="story-highlight" style={{ fontSize: '1.4rem', marginBottom: '0.3rem' }}>
-                Baccalauréat Scientifique (Série D — Biologie - Géologie)
-              </p>
-              <p style={{ fontSize: '1rem', color: 'var(--color-gray)' }}>CEG 1 de Comé / Office du Baccalauréat (Juillet 2022)</p>
-              <p style={{ fontSize: '1.1rem' }}>Mention Assez Bien avec notamment 19/20 en biologie.</p>
-            </div>
+              <div className="cv-skill-group">
+                <h3>Pédagogie & Audiovisuel</h3>
+                <p>Ingénierie didactique (CAPVIDUP), Capsules vidéo éducatives, Montage vidéo mobile & PC, Motion design.</p>
+              </div>
 
-            <div>
-              <p className="story-highlight" style={{ fontSize: '1.4rem', marginBottom: '0.3rem' }}>
-                Brevet d'Études du Premier Cycle (BPC)
-              </p>
-              <p style={{ fontSize: '1rem', color: 'var(--color-gray)' }}>Collège de l'Espoir de Comé (2019)</p>
-              <p style={{ fontSize: '1.1rem' }}>Mention Très Bien (Parmi les 10 premiers de l'établissement).</p>
-            </div>
-          </div>
-        </section>
+              <div className="cv-skill-group">
+                <h3>Technologies Numériques</h3>
+                <p>Prompt Engineering, Intelligence Artificielle générative, Vibe Coding, Développement Web (React/JS).</p>
+              </div>
+            </section>
 
-        {/* EXPÉRIENCES PROFESSIONNELLES */}
-        <section className="story-block section-observe reveal-text" style={{ paddingTop: '2rem', paddingBottom: '3rem' }}>
-          <p className="story-highlight text-center mb-2">Expériences Professionnelles & Stages</p>
+            {/* LANGUES */}
+            <section className="cv-section">
+              <h2 className="cv-section-title">Langues</h2>
+              <ul className="cv-list">
+                <li><strong>Français :</strong> Langue d'instruction / Courant</li>
+                <li><strong>Anglais :</strong> Technique & Académique</li>
+              </ul>
+            </section>
 
-          <div style={{ width: '100%', maxWidth: '750px', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-            <div>
-              <p className="story-highlight" style={{ fontSize: '1.4rem', marginBottom: '0.3rem' }}>
-                Enseignant en Informatique
-              </p>
-              <p style={{ fontSize: '1rem', color: 'var(--color-gray)' }}>EMTP de Lokossa (2025 - 2026)</p>
-              <p style={{ fontSize: '1.1rem' }}>Enseignement théorique et pratique de l'informatique, préparation des supports didactiques.</p>
-            </div>
+            {/* ENGAGEMENTS */}
+            <section className="cv-section">
+              <h2 className="cv-section-title">Engagements</h2>
+              <ul className="cv-list">
+                <li>Responsable de l'Institution Culturelle et Artistique — ENSET Lokossa</li>
+                <li>Certifié en Rédaction de Projets OSC — Projet INTER-AGIAL (2023)</li>
+              </ul>
+            </section>
 
-            <div>
-              <p className="story-highlight" style={{ fontSize: '1.4rem', marginBottom: '0.3rem' }}>
-                Monteur Vidéo Certifié
-              </p>
-              <p style={{ fontSize: '1rem', color: 'var(--color-gray)' }}>Projet WAMUP (Mars 2026)</p>
-              <p style={{ fontSize: '1.1rem' }}>Captation vidéo mobile, montage et création de contenus médias pour le rassemblement WAMUP 2026.</p>
-            </div>
+          </aside>
 
-            <div>
-              <p className="story-highlight" style={{ fontSize: '1.4rem', marginBottom: '0.3rem' }}>
-                Stage en Maintenance GSM & Systèmes
-              </p>
-              <p style={{ fontSize: '1rem', color: 'var(--color-gray)' }}>Leader Électronique — Comé (2024)</p>
-              <p style={{ fontSize: '1.1rem' }}>Maintenance GSM, micro-soudure électronique, installation de systèmes d'exploitation.</p>
-            </div>
+          {/* RIGHT MAIN COLUMN */}
+          <main className="cv-main-content">
+            
+            {/* FORMATIONS */}
+            <section className="cv-section">
+              <h2 className="cv-section-title">Formations & Diplômes</h2>
 
-            <div>
-              <p className="story-highlight" style={{ fontSize: '1.4rem', marginBottom: '0.3rem' }}>
-                Stage en Électronique Hospitalière
-              </p>
-              <p style={{ fontSize: '1rem', color: 'var(--color-gray)' }}>CHD de Lokossa (2022)</p>
-              <p style={{ fontSize: '1.1rem' }}>Organisation d'entreprise, maintenance et diagnostic des équipements hospitaliers.</p>
-            </div>
-          </div>
-        </section>
+              <div className="cv-item">
+                <div className="cv-item-header">
+                  <span className="cv-item-role">BAPET — Brevet d'Aptitude au Professorat de l'Enseignement Technique</span>
+                  <span className="cv-item-date">2024 – 2025</span>
+                </div>
+                <div className="cv-item-sub">ENSET Lokossa — UNSTIM d'Abomey</div>
+                <p className="cv-item-desc">
+                  Spécialité Électronique. Soutenance du mémoire le 14/07/2025 : <strong>18/20 (Mention EXCELLENT)</strong> sur l'intégration pédagogique des capsules vidéo.
+                </p>
+              </div>
 
-        {/* COMPÉTENCES & ENGAGEMENTS */}
-        <section className="story-block section-observe reveal-text" style={{ paddingTop: '2rem', paddingBottom: '6rem' }}>
-          <p className="story-highlight text-center mb-2">Compétences & Engagements</p>
-          <ul className="clean-list" style={{ fontSize: '1.3rem', textAlign: 'center', lineHeight: '2' }}>
-            <li>Électronique : Conception PCB, Langage C, Microcontrôleurs, Maintenance GSM & PC.</li>
-            <li>Pédagogie & Vidéo : Didactique, Capsules vidéo, Montage vidéo, Motion Design.</li>
-            <li>Technologies : Intelligence Artificielle, Prompt Engineering, Vibe Coding.</li>
-            <li>Engagements : Responsable de l'institution culturelle et artistique (ENSET Lokossa), Formation projets OSC (INTER-AGIAL 2023).</li>
-          </ul>
-        </section>
+              <div className="cv-item">
+                <div className="cv-item-header">
+                  <span className="cv-item-role">Licence en Sciences Techniques & Industrielles (Électronique)</span>
+                  <span className="cv-item-date">2022 – 2025</span>
+                </div>
+                <div className="cv-item-sub">ENSET de Lokossa</div>
+                <p className="cv-item-desc">
+                  Génie électronique, automatique, didactique et ingénierie de la capsule vidéo (Projet CAPVIDUP/PFCR1).
+                </p>
+              </div>
+
+              <div className="cv-item">
+                <div className="cv-item-header">
+                  <span className="cv-item-role">Baccalauréat Scientifique (Série D — Biologie & Géologie)</span>
+                  <span className="cv-item-date">Juillet 2022</span>
+                </div>
+                <div className="cv-item-sub">CEG 1 de Comé / Office du Baccalauréat Bénin</div>
+                <p className="cv-item-desc">
+                  Mention Assez Bien avec notamment la note de <strong>19/20 en biologie</strong>.
+                </p>
+              </div>
+
+              <div className="cv-item">
+                <div className="cv-item-header">
+                  <span className="cv-item-role">Brevet d'Études du Premier Cycle (BPC)</span>
+                  <span className="cv-item-date">2019</span>
+                </div>
+                <div className="cv-item-sub">Collège de l'Espoir de Comé</div>
+                <p className="cv-item-desc">
+                  Mention Très Bien. Classé parmi les 10 premiers de l'établissement.
+                </p>
+              </div>
+            </section>
+
+            {/* EXPÉRIENCES PROFESSIONNELLES */}
+            <section className="cv-section">
+              <h2 className="cv-section-title">Expériences Professionnelles & Stages</h2>
+
+              <div className="cv-item">
+                <div className="cv-item-header">
+                  <span className="cv-item-role">Enseignant en Informatique</span>
+                  <span className="cv-item-date">2025 – 2026</span>
+                </div>
+                <div className="cv-item-sub">EMTP de Lokossa</div>
+                <p className="cv-item-desc">
+                  Enseignement théorique et pratique de l'informatique, conception des contenus pédagogiques et encadrement des élèves.
+                </p>
+              </div>
+
+              <div className="cv-item">
+                <div className="cv-item-header">
+                  <span className="cv-item-role">Monteur Vidéo & Créateur Média Certifié</span>
+                  <span className="cv-item-date">Mars 2026</span>
+                </div>
+                <div className="cv-item-sub">Projet WAMUP (WE4CCA Annual Meet Up)</div>
+                <p className="cv-item-desc">
+                  Captation vidéo mobile, montage et production de contenus visuels pour le rassemblement annuel WAMUP 2026.
+                </p>
+              </div>
+
+              <div className="cv-item">
+                <div className="cv-item-header">
+                  <span className="cv-item-role">Stage en Maintenance GSM & Systèmes</span>
+                  <span className="cv-item-date">2024</span>
+                </div>
+                <div className="cv-item-sub">Leader Électronique — Comé</div>
+                <p className="cv-item-desc">
+                  Maintenance GSM, micro-soudure électronique, diagnostic et installation de systèmes d'exploitation.
+                </p>
+              </div>
+
+              <div className="cv-item">
+                <div className="cv-item-header">
+                  <span className="cv-item-role">Stage en Électronique Hospitalière</span>
+                  <span className="cv-item-date">2022</span>
+                </div>
+                <div className="cv-item-sub">CHD de Lokossa (Centre Hospitalier Départemental)</div>
+                <p className="cv-item-desc">
+                  Maintenance préventive et corrective des équipements médicaux et organisation des services techniques.
+                </p>
+              </div>
+            </section>
+
+            {/* PROJETS MAJEURS */}
+            <section className="cv-section">
+              <h2 className="cv-section-title">Projets Majeurs</h2>
+              <div className="cv-item">
+                <span className="cv-item-role">Capsule Vidéo Pédagogique en Électronique (ENSET Lokossa)</span>
+                <p className="cv-item-desc">Conception d'un support vidéo d'enseignementDidactique en électronique numérique (Projet CAPVIDUP).</p>
+              </div>
+              <div className="cv-item">
+                <span className="cv-item-role">Circuit PCB « Jeu de Réflexe »</span>
+                <p className="cv-item-desc">Étude schématique, routage et soudure d'un circuit imprimé de test de vitesse de réaction (Octobre 2024).</p>
+              </div>
+            </section>
+
+          </main>
+
+        </div>
 
       </div>
+
     </article>
   )
 }

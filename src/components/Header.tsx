@@ -12,6 +12,9 @@ export default function Header() {
       <nav className="nav">
         <Link to="/" className={location.pathname === '/' ? 'active' : ''}>À propos</Link>
         <a href="/#parcours">Parcours</a>
+        <Link to="/diplomes" className={location.pathname === '/diplomes' ? 'active' : ''}>Diplômes</Link>
+        <Link to="/projets" className={location.pathname === '/projets' ? 'active' : ''}>Projets</Link>
+        <Link to="/cv" className={location.pathname === '/cv' ? 'active' : ''}>CV</Link>
         <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>Contact</Link>
         <span className="status-indicator">
           <span className="dot"></span> Disponible pour des projets

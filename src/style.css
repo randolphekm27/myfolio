@@ -390,6 +390,27 @@ body.dark-mode .story-image {
   }
 }
 
+/* PRINT STYLES FOR CV DOWNLOAD */
+@media print {
+  header, footer, .no-print, .status-indicator {
+    display: none !important;
+  }
+  body, html {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .page-container, .narrative-container {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+  .highlight-card {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+}
+
 /* CONTACT PAGE */
 .contact-page {
   min-height: 80vh;

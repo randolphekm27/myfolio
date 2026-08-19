@@ -104,7 +104,7 @@ export default function Home() {
           </p>
         </div>
         <div className="hero-image-wrapper">
-          <img src="/photo-portrait.jpg" alt="Randolphe Kodjo Mahulolo" className="hero-image" id="hero-image" />
+          <img src="./portrait.png" alt="Randolphe Kodjo Mahulolo" className="hero-image" id="hero-image" />
         </div>
       </section>
 
@@ -140,7 +140,7 @@ export default function Home() {
           <p>Pendant trois années à l'ENSET de Lokossa, j'ai découvert bien plus qu'un domaine technique. J'ai progressivement découvert le monde de la pédagogie, de l'enseignement et de la transmission.</p>
 
           <div className="story-image-wrapper reveal-text">
-            <img src="/photo-circuit.jpg" alt="Conception électronique" className="story-image" />
+            <img src="./photo-circuit.jpg" alt="Conception électronique" className="story-image" />
           </div>
 
           <p>En juillet 2025, après trois années de travail, je soutiens publiquement mon mémoire devant un jury composé du Dr Gnonlonfoun Jean-Marc et de Mme Ahouandjinou Inès.</p>
@@ -154,13 +154,13 @@ export default function Home() {
         </section>
 
         <section className="story-block section-observe reveal-text">
-          <p>Parce qu'au départ, ce sujet pouvait sembler assez éloigné de ce que je fais aujourd'hui. Mais c'est justement en travaillant sur cette capsule vidéo pédagogique que j'ai commencé à développer sérieusement mes compétences en montage vidéo, en narration visuelle et en création de contenus.</p>
+          <p>Parce qu'au départ, ce sujet pouvait sembler assez éloigné de ce que je fais aujourd'hui. Mais c'est justamente en travaillant sur cette capsule vidéo pédagogique que j'ai commencé à développer sérieusement mes compétences en montage vidéo, en narration visuelle et en création de contenus.</p>
           <p className="story-highlight mt-2 mb-2">Mon mémoire a donc été, d'une certaine manière, le pont entre la pédagogie et la création numérique.</p>
           <p>Ce travail avait été réalisé dans le cadre du projet CAPVIDUP/PFCR1 — ENSET Lokossa, édition 2024.</p>
           <p>Puis est venu le BAPET — Brevet d'Aptitude au Professorat de l'Enseignement Technique.</p>
 
           <div className="story-image-wrapper reveal-text">
-            <img src="/photo-wamup-phone.jpg" alt="Création numérique" className="story-image" />
+            <img src="./photo-wamup-phone.jpg" alt="Création numérique" className="story-image" />
           </div>
         </section>
 
@@ -187,9 +187,9 @@ export default function Home() {
           <p>J'ai développé des compétences en maintenance informatique, maintenance GSM, programmation en langage C, conception de circuits électroniques, prompt engineering, intelligence artificielle, vibe coding, stratégie marketing, création de contenu, montage vidéo et motion design.</p>
           <p>En mars 2026, j'ai notamment obtenu un certificat d'engagement en tant que monteur vidéo dans le cadre du projet WAMUP.</p>
 
-          <div className="story-image-wrapper reveal-text" style={{ display: 'flex', gap: '2rem' }}>
-            <img src="/photo-wamup-cert.jpg" alt="Certificat WAMUP" className="story-image" style={{ flex: 1 }} />
-            <img src="/photo-wamup-group.jpg" alt="Equipe WAMUP" className="story-image" style={{ flex: 1 }} />
+          <div className="story-image-wrapper story-image-dual reveal-text">
+            <img src="./photo-wamup-cert.jpg" alt="Certificat WAMUP" className="story-image" />
+            <img src="./photo-wamup-group.jpg" alt="Equipe WAMUP" className="story-image" />
           </div>
         </section>
 

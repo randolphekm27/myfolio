@@ -5,10 +5,6 @@ export default function CVPage() {
     window.scrollTo(0, 0)
   }, [])
 
-  const handlePrint = () => {
-    window.print()
-  }
-
   return (
     <article className="page-content" style={{ paddingTop: 'calc(var(--header-height) + 2rem)', paddingBottom: '6rem' }}>
       
@@ -18,25 +14,14 @@ export default function CVPage() {
         <p className="hero-description" style={{ fontSize: '1.1rem', color: 'var(--color-gray)', marginBottom: '1.5rem' }}>
           Format officiel de Randolphe Kodjo Mahulolo prê̂t pour impression et téléchargement PDF.
         </p>
-        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <a
-            href="/CV_Randolphe_Kodjo_Mahulolo.pdf"
-            download="CV_Randolphe_Kodjo_Mahulolo.pdf"
-            className="contact-back"
-            style={{ display: 'inline-block', fontWeight: '600', padding: '0.8rem 2rem' }}
-          >
-            Télécharger le CV en PDF
-          </a>
-          <button
-            onClick={handlePrint}
-            className="contact-back"
-            style={{ cursor: 'pointer', background: 'none', border: 'none' }}
-          >
-            <a style={{ display: 'inline-block', fontWeight: '600', padding: '0.8rem 2rem' }}>
-              Imprimer le CV
-            </a>
-          </button>
-        </div>
+        <a
+          href="/CV_Randolphe_Kodjo_Mahulolo.pdf"
+          download="CV_Randolphe_Kodjo_Mahulolo.pdf"
+          className="contact-back"
+          style={{ display: 'inline-block', fontWeight: '600', padding: '0.8rem 2rem' }}
+        >
+          Télécharger le CV en PDF
+        </a>
       </div>
 
       {/* STANDARD EXECUTIVE CV CONTAINER */}

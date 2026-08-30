@@ -635,6 +635,27 @@ body.dark-mode .cv-document-sheet {
   line-height: 1.6;
 }
 
+.cv-download-btn {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem 2.5rem;
+  background-color: var(--color-accent);
+  color: #fff;
+  border-radius: 4px;
+  border: 1px solid var(--color-accent);
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.cv-download-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
 @media (max-width: 768px) {
   .cv-sheet-body {
     grid-template-columns: 1fr;
@@ -651,6 +672,10 @@ body.dark-mode .cv-document-sheet {
   }
   .cv-document-sheet {
     padding: 1.5rem;
+  }
+  .cv-download-btn {
+    width: 100%;
+    text-align: center;
   }
 }
 

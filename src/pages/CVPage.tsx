@@ -6,7 +6,7 @@ export default function CVPage() {
   }, [])
 
   return (
-    <article className="page-content" style={{ paddingTop: 'calc(var(--header-height) + 2rem)', paddingBottom: '6rem' }}>
+    <article className="page-content" style={{ paddingTop: '10rem', paddingBottom: '6rem' }}>
 
       {/* DOWNLOAD / PRINT HEADER BAR */}
       <div className="no-print text-center" style={{ marginBottom: '2.5rem' }}>

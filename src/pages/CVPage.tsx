@@ -60,12 +60,12 @@ export default function CVPage() {
             cursor: 'pointer'
           }}
           onMouseEnter={(e) => {
-            e.target.style.transform = 'translateY(-3px) scale(1.02)'
-            e.target.style.boxShadow = '0 12px 35px rgba(102, 126, 234, 0.6)'
+            e.currentTarget.style.transform = 'translateY(-3px) scale(1.02)'
+            e.currentTarget.style.boxShadow = '0 12px 35px rgba(102, 126, 234, 0.6)'
           }}
           onMouseLeave={(e) => {
-            e.target.style.transform = 'translateY(0) scale(1)'
-            e.target.style.boxShadow = '0 8px 25px rgba(102, 126, 234, 0.4)'
+            e.currentTarget.style.transform = 'translateY(0) scale(1)'
+            e.currentTarget.style.boxShadow = '0 8px 25px rgba(102, 126, 234, 0.4)'
           }}
         >
           ⬇ Télécharger le CV en PDF

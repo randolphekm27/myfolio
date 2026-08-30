@@ -28,11 +28,11 @@ export default function Projets() {
       result: 'Soutenu avec 18/20 — Mention Excellent'
     },
     {
-      title: 'Circuit Électronique PCB — Jeu de Réflexe',
-      category: 'Génie Électronique & Microcontrôleurs',
-      desc: 'Étude schématique et conception de circuit imprimé (PCB) intégrant des afficheurs 7 segments, des rangées de LEDs de test et une logique de contrôle de vitesse de réaction.',
+      title: 'Conception de Circuit Électronique dans Proteus',
+      category: 'Génie Électronique & Simulation',
+      desc: 'Processus d\'étude schématique, de simulation et de conception de circuit électronique réalisé sous le logiciel Proteus.',
       image: './photo-circuit.jpg',
-      result: 'Octobre 2024 — Réalisé & Fonctionnel'
+      result: 'Conception & Simulation Proteus'
     },
     {
       title: 'Production Vidéo & Couverture Média WAMUP 2026',

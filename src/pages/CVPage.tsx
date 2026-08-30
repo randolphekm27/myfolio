@@ -142,7 +142,7 @@ export default function CVPage() {
 
               <div className="cv-item">
                 <div className="cv-item-header">
-                  <span className="cv-item-role">Brevet d'Études du Premier Cycle (BPC)</span>
+                  <span className="cv-item-role">Brevet d'Études du Premier Cycle (BEPC)</span>
                   <span className="cv-item-date">2019</span>
                 </div>
                 <div className="cv-item-sub">Collège de l'Espoir de Comé</div>
@@ -209,8 +209,8 @@ export default function CVPage() {
                 <p className="cv-item-desc">Conception d'un support vidéo d'enseignementDidactique en électronique numérique (Projet CAPVIDUP).</p>
               </div>
               <div className="cv-item">
-                <span className="cv-item-role">Circuit PCB « Jeu de Réflexe »</span>
-                <p className="cv-item-desc">Étude schématique, routage et soudure d'un circuit imprimé de test de vitesse de réaction (Octobre 2024).</p>
+                <span className="cv-item-role">Conception de Circuit Électronique dans Proteus</span>
+                <p className="cv-item-desc">Processus d'étude schématique, de simulation et de conception de circuit électronique dans le logiciel Proteus.</p>
               </div>
             </section>
 

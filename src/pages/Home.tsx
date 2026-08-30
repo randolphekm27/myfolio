@@ -121,7 +121,7 @@ export default function Home() {
           <p>J'ai ensuite poursuivi le collège dans mon village avant de quitter mes parents pour rejoindre ma grande sœur à Comé. J'avais alors seulement douze ans.</p>
           <p>J'ai intégré la classe de cinquième au Collège de l'Espoir de Comé, l'un des établissements privés réputés de la ville. C'est à partir de cette période que mon environnement a complètement changé. Loin du calme de mon village, j'ai découvert la ville, son rythme, son ambiance et tout ce qui venait avec.</p>
           <p className="story-highlight mt-2 mb-2">La ville m'a ouvert l'esprit.</p>
-          <p>En 2019, j'ai obtenu mon BPC avec une mention Très Bien. J'étais parmi les dix premiers de mon établissement et parmi les soixante premiers au niveau communal.</p>
+          <p>En 2019, j'ai obtenu mon BEPC avec une mention Très Bien. J'étais parmi les dix premiers de mon établissement et parmi les soixante premiers au niveau communal.</p>
         </section>
 
         <section className="story-block section-observe reveal-text">
@@ -140,7 +140,7 @@ export default function Home() {
           <p>Pendant trois années à l'ENSET de Lokossa, j'ai découvert bien plus qu'un domaine technique. J'ai progressivement découvert le monde de la pédagogie, de l'enseignement et de la transmission.</p>
 
           <div className="story-image-wrapper reveal-text">
-            <img src="./photo-circuit.jpg" alt="Conception électronique" className="story-image" />
+            <img src="./photo-circuit.jpg" alt="Processus de conception de circuit électronique dans Proteus" className="story-image" />
           </div>
 
           <p>En juillet 2025, après trois années de travail, je soutiens publiquement mon mémoire devant un jury composé du Dr Gnonlonfoun Jean-Marc et de Mme Ahouandjinou Inès.</p>
